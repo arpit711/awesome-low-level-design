@@ -61,7 +61,7 @@ public class MovieTicketBookingSystem {
         return shows.get(showId);
     }
 
-    public synchronized Booking bookTickets(User user, Show show, List<Seat> selectedSeats) {
+    public Booking bookTickets(User user, Show show, List<Seat> selectedSeats) {
         if (areSeatsAvailable(show, selectedSeats)) {
             markSeatsAsBooked(show, selectedSeats);
             double totalPrice = calculateTotalPrice(selectedSeats);
